@@ -22,12 +22,11 @@ function main() {
     player,
     projector,
     lights,
-    screen,
-    popper
+    screen
   );
 
   console.log("Movie is starting!!");
-  htfacade.watchMovie();
+  htfacade.watchMovie(popper);
   console.log("\n");
   console.log("Movie is ending!!!");
   htfacade.endMovie();

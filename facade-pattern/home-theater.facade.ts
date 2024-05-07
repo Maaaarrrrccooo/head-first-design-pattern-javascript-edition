@@ -21,8 +21,7 @@ export class HomeTheaterFacade {
     player: StreamingPlayer,
     projector: Projector,
     lights: TheaterLights,
-    screen: Screen,
-    popper: PopcornPopper
+    screen: Screen
   ) {
     this.amp = amp;
     this.tuner = tuner;
@@ -30,12 +29,11 @@ export class HomeTheaterFacade {
     this.projector = projector;
     this.lights = lights;
     this.screen = screen;
-    this.popper = popper;
   }
 
-  watchMovie() {
-    this.popper.on();
-    this.popper.pop();
+  watchMovie(popper: PopcornPopper) {
+    popper.on();
+    popper.pop();
     this.lights.dim(10);
     this.screen.down();
     this.projector.on();
@@ -47,6 +45,7 @@ export class HomeTheaterFacade {
     this.player.on();
     this.player.play("The Dark Knight");
   }
+
   endMovie() {
     this.lights.on();
     this.screen.up();
